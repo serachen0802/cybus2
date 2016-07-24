@@ -27,7 +27,7 @@
                 <div class="menu">
                     <ul>
                     <li><a class="active">查詢及訂票</a></li>
-                    <li><a href="Search1.php">我的車票</a></li>
+                    <li><a href="https://lab-sera-chen.c9users.io/cybusEasy/Search/search">我的車票</a></li>
                 </ul>
                 </div>
                 <div class="clearfix"></div>
@@ -49,7 +49,6 @@
                             <div class="OrderContent">
                                 <div class="agreeTitle">訂票成功</div>
                                 <div class="agreeContent">
-                                    <?php echo $data['oid'] ?>
                                     <?php 
                                         $oid = $data['oid'][0];
                                         $oid2 = $data['oid2'][0];

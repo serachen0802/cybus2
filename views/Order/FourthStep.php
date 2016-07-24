@@ -23,12 +23,12 @@
         <div class="header">
             <div class="container">
                 <div class="logo">
-                    <a href="Index.php"><img src="images/cybus.png" /></a>
+                    <a href="https://lab-sera-chen.c9users.io/cybusEasy/Home/index"><img src="images/cybus.png" /></a>
                 </div>
                 <div class="menu">
                    <ul>
                     <li><a class="active">查詢及訂票</a></li>
-                    <li><a href="Search1.php">我的車票</a></li>
+                    <li><a href="https://lab-sera-chen.c9users.io/cybusEasy/Search/search">我的車票</a></li>
                 </ul>
                 </div>
                 <div class="clearfix"></div>

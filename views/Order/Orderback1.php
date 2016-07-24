@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+< !DOCTYPE HTML >
 <html>
 
 <head>
@@ -16,20 +16,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.full.min.js"></script>
-    <!--<script type="text/javascript" src="javascript/Index.js"></script>-->
+    <script type="text/javascript">
+        $(function() {
+            $.datetimepicker.setLocale('zh-TW');
+        
+            $(".datenowpicker").datetimepicker({
+                timepicker: false,
+                format: 'Y/m/d',
+                minDate: 0
+            });
+        
+            $(".timepicker").datetimepicker({
+                datepicker: false,
+                format: 'H:i',
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <form method="post" action="Orderback2.php">
+    <form method="post" action="https://lab-sera-chen.c9users.io/cybusEasy/Order/Orderback2">
     <div class="header">
         <div class="container">
             <div class="logo">
-                <a href="Index.php"><img src="images/cybus.png" /></a>
+                <a href="https://lab-sera-chen.c9users.io/cybusEasy/Home/index"><img src="images/cybus.png" /></a>
             </div>
             <div class="menu">
                 <ul>
                     <li><a class="active">查詢及訂票</a></li>
-                    <li><a href="Search1.php">我的車票</a></li>
+                    <li><a href="https://lab-sera-chen.c9users.io/cybusEasy/Search/search">我的車票</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>
@@ -49,10 +64,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block">
-
                         <div type="text" class="ba" value="">--請選擇回程日期--</div>
-                        <div class="bas"><span>起站 :  <?php echo $end; ?></span></div>
-                        <div class="bas"><span>迄站 :  <?php echo $start; ?></span></div>
+                        <div class="bas"><span>起站 :  <?php echo $data['end']; ?></span></div>
+                        <div class="bas"><span>迄站 :  <?php echo $data['start']; ?></span></div>
                         <div class="FormOne">
                             <div class="FormLeft">
                                 <p>日期:</p>
@@ -67,9 +81,9 @@
                             </div>
                         </div>
                         <div class="clearfix"></div>
-                        <input type="hidden" name="oid" value="<?php echo $oid; ?>"/>
-                        <input type="hidden" name="backstart" value="<?php echo $end; ?>"/>
-                        <input type="hidden" name="backend" value="<?php echo $start; ?>"/>
+                        <input type="hidden" name="oid" value="<?php echo $_GET['oid']; ?>"/>
+                        <input type="hidden" name="backstart" value="<?php echo $data['end']; ?>"/>
+                        <input type="hidden" name="backend" value="<?php echo $data['start']; ?>"/>
                     </div>
                 </div>
             </div>
@@ -80,7 +94,6 @@
     <script>
         $("#btnok").click(function(){
             $("form").submit();
-
         })
     </script>
 

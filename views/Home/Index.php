@@ -1,4 +1,3 @@
-https://lab-sera-chen.c9users.io/cyBusAdmin/index.php/Admin/Index/index#
 <!DOCTYPE HTML>
 <html>
 <head>

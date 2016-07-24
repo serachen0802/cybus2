@@ -84,13 +84,72 @@ class OrderController extends Controller {
     
     public function Orderback1(){
         $oid= $_GET['oid'];
+        $model =  $this->model("OrderModel");
         
+        $dataList = $model->GetOrderback1($oid);
         
-        foreach($data as $key => $value){
+        foreach($dataList as $key => $value){
     
-            $start=$value['start'];
-            $end=$value['end'];
+            $data['start']=$value['start'];
+            $data['end']=$value['end'];
         }
+        $this->view("Order/Orderback1", $data);
+    }
+    
+    public function Orderback2(){
+        $backdate = $_POST['backdate'];
+        $backstart=$_POST['backstart'];
+        $backend=$_POST['backend'];
+    
+        $model =  $this->model("OrderModel");
+        $data['arr_data'] = $model->GetOrderback2($backdate, $backstart, $backend);
+        $this->view("Order/Orderback2", $data);
+    }
+    
+    public function Orderback3(){
+        $sid=$_POST['sid'];
+        $did=$_POST['did'];
+        $oid=$_POST['oid'];
+
+        $model =  $this->model("OrderModel");
+        $data['arr_data'] = $model->GetOrderback3_1($sid, $did);
+        $data['arr_data2'] = $model->GetOrderback3_1($sid, $did);
+        foreach($data['arr_data2'] as $k => $val){
+            $res.=$val['seat'].",";
+        }
+        
+        $data['res']=substr($res,0,-1);
+        
+        
+        $data['arr_data3'] = $model->GetOrderback3_3($oid);
+        foreach($data['arr_data3'] as $key => $v){
+            $data['TicketNumr']=$v['number'];
+        }
+        $this->view("Order/Orderback3", $data);
+    }
+    
+    public function InsertOrderback(){
+        $oid=$_POST['oid'];
+        $sid=$_POST['sid'];
+        $did=$_POST['did'];
+        $seat=$_POST['snum'];
+        
+        $model =  $this->model("OrderModel");
+        $oid2 = $model->InsertOrderback($oid, $sid, $did, $seat);
+        header('location:Orderback4?oid2='.$oid2.'&oid='.$oid);
+    }
+    
+    public function Orderback4(){
+        $oid2=$_GET["oid2"];
+        $oid=$_GET["oid"];
+        $model =  $this->model("OrderModel");
+        $data['oid'] = $model->GetOrderback4_1($oid);
+        $data['oid2'] = $model->GetOrderback4_2($oid2);
+
+        if($data['oid']['type']="來回票-去程"){
+            $data['type']="來回票";
+        }
+        $this->view("Order/Orderback4", $data);
     }
 }
 ?>

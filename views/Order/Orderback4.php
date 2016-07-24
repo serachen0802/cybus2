@@ -49,9 +49,10 @@
                             <div class="OrderContent">
                                 <div class="agreeTitle">訂票成功</div>
                                 <div class="agreeContent">
+                                    <?php echo $data['oid'] ?>
                                     <?php 
-                                        foreach($data['oid'] as $key => $oid){}
-                                        foreach($data['oid2'] as $key => $oid2){}
+                                        $oid = $data['oid'][0];
+                                        $oid2 = $data['oid2'][0];
                                     ?>
                                     <div class="marginB"><span>訂票姓名 :  </span><?php echo "  ".$oid['clientName'];?></div>
                                     <div class="marginB"><span>身分證字號 :  </span><?php echo $oid['clientId'];?></div>

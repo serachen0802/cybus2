@@ -113,7 +113,7 @@ class OrderController extends Controller {
 
         $model =  $this->model("OrderModel");
         $data['arr_data'] = $model->GetOrderback3_1($sid, $did);
-        $data['arr_data2'] = $model->GetOrderback3_1($sid, $did);
+        $data['arr_data2'] = $model->GetOrderback3_2($sid, $did);
         foreach($data['arr_data2'] as $k => $val){
             $res.=$val['seat'].",";
         }

@@ -1,5 +1,4 @@
 <?php
-    require_once('connect.php');
     
     class OrderModel  extends connect{
         
@@ -9,7 +8,6 @@
             $data = $a->fetchAll(PDO::FETCH_ASSOC);
             return $data;
         }
-        
         
         public function GetThirdData($sid, $did) {
             $a = $this->db->query(" SELECT * FROM bus_date INNER JOIN bus_schedule ON bus_date.sid=bus_schedule.sid

@@ -5,7 +5,8 @@ class OrderController extends Controller {
     public function FirstStep(){
         if($_POST['sid']==""){
             echo "<script>alert('請選擇車次');</script>";
-            header("Refresh:0;url=Index.php");
+            header("Refresh:0;url=https://lab-sera-chen.c9users.io/cybusEasy/");
+            
         }
 
         $this->view("Order/FirstStep");
@@ -23,7 +24,7 @@ class OrderController extends Controller {
     public function thirdStep(){
         if($_POST['price']==""){
           echo "<script>alert('請選擇票種張數');</script>";
-            header("Refresh:0;url=Index.php");
+            header("Refresh:0;url=https://lab-sera-chen.c9users.io/cybusEasy/");
         }
         
         $sid=$_POST['sid'];//    
@@ -80,7 +81,6 @@ class OrderController extends Controller {
         $data['arr_data'] = $model->GetFourthData($oid);
         $this->view("Order/FourthStep", $data);
     }
-    
     
     public function Orderback1(){
         $oid= $_GET['oid'];

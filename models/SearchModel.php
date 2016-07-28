@@ -1,5 +1,5 @@
 <?php
-require_once('connect.php');
+
 class SearchModel  extends connect{
     
     public function search($clientId,$clientPhone){

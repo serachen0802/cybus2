@@ -1,7 +1,6 @@
 <?php
-// header("cybusEasy/Content-Type:text/html; charset=utf-8");
 
-require_once('connect.php');
+
  class HomeModel  extends connect{
 
      

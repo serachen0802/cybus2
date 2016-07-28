@@ -29,7 +29,7 @@
                 </div>
                 <div class="menu">
                 <ul>
-                    <li><a class="https://lab-sera-chen.c9users.io/cybusEasy/Home/index">查詢及訂票</a></li>
+                    <li><a class="active">查詢及訂票</a></li>
                     <li><a href="https://lab-sera-chen.c9users.io/cybusEasy/Search/search">我的車票</a></li>
                 </ul>
                 </div>

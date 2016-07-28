@@ -11,14 +11,16 @@ class HomeController extends Controller {
     function city1(){
         $pdo = $this->model("PDOtest");
         $city = $pdo ->city1();
-        echo json_encode($city);
+        $this->view("Ajax/city",$city);
+        // echo json_encode($city);
     }
     
     function city2(){
         $city1=$_POST['city1'];
         $pdo = $this->model("PDOtest");
-        $city = $pdo ->city2($city1);
-        echo json_encode($city);
+        $city2 = $pdo ->city2($city1);
+        $this->view("Ajax/city",$city2);
+        
     }
    
 }

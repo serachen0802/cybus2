@@ -11,7 +11,7 @@
         
         public function GetThirdData($sid, $did) {
             $a = $this->db->query(" SELECT * FROM bus_date INNER JOIN bus_schedule ON bus_date.sid=bus_schedule.sid
-            WHERE bus_date.sid='".$sid. "' and bus_date.did='".$did."'");
+            WHERE bus_date.sid='".$sid. "' AND bus_date.did='".$did."'");
             $data = $a->fetchAll(PDO::FETCH_ASSOC);
             
             return $data;
@@ -26,7 +26,7 @@
         }
         
         public function InsertSeated($sid, $did, $clientId, $name, $phone, $seat, $ordertime, $ticket, $TicketNumr, $TotalPrice, $ticrand) {
-            $tins = $this->db->prepare("insert into `bus_corder` " .
+            $tins = $this->db->prepare("INSERT INTO `bus_corder` " .
                     "(`sid`,`did`,`clientId`,`clientName`,`clientPhone`,`seat`,`orderTime`,`type`,`number`,`total`,`ticrand`)".
                     "values(:sid,:did,:clientId,:clientName,:clientPhone,:seat,:orderTime,:type,:number,:total,:ticrand)"
                   );
@@ -107,7 +107,7 @@
                 $ticrand=$value['ticrand'];
             }
         
-            $tins = $this->db->prepare("insert into `bus_corder` " .
+            $tins = $this->db->prepare("INSERT INTO `bus_corder` " .
                     "(`sid`,`did`,`clientId`,`clientName`,`clientPhone`,`seat`,`orderTime`,`type`,`number`,`total`,`ticrand`)".
                     "values(:sid,:did,:clientId,:clientName,:clientPhone,:seat,:orderTime,:type,:number,:total,:ticrand)"
                   );

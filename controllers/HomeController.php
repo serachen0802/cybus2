@@ -12,7 +12,6 @@ class HomeController extends Controller {
         $pdo = $this->model("PDOtest");
         $city = $pdo ->city1();
         $this->view("Ajax/city",$city);
-        // echo json_encode($city);
     }
     
     function city2(){

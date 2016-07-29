@@ -4,7 +4,7 @@ class OrderController extends Controller {
     
     public function FirstStep(){
         if($_POST['sid']==""){
-            echo "<script>alert('請選擇車次');</script>";
+            // echo "<script>alert('請選擇車次');</script>";
             header("Refresh:0;url=https://lab-sera-chen.c9users.io/cybusEasy/");
             
         }
@@ -23,8 +23,8 @@ class OrderController extends Controller {
     
     public function thirdStep(){
         if($_POST['price']==""){
-          echo "<script>alert('請選擇票種張數');</script>";
-            header("Refresh:0;url=https://lab-sera-chen.c9users.io/cybusEasy/");
+        //   echo "<script>alert('請選擇票種張數');</script>";
+          header("Refresh:0;url=https://lab-sera-chen.c9users.io/cybusEasy/");
         }
         
         $sid=$_POST['sid'];//    
@@ -66,8 +66,8 @@ class OrderController extends Controller {
         $backend=$_POST['backend'];
         
         $model =  $this->model("OrderModel");
-        
         $oid = $model->InsertSeated($sid, $did, $clientId, $name, $phone, $seat, $ordertime, $ticket, $TicketNumr, $TotalPrice, $ticrand);
+        
         if($ticket1=="來回票-去程"){
             header('location:Orderback1?oid='.$oid);
         }else{

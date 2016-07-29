@@ -1,7 +1,5 @@
 <!DOCTYPE HTML>
-<?php
 
-?>
 <html>
 <head>
     <base href="/cybusEasy/public/" />

@@ -19,7 +19,7 @@ class ListController extends Controller {
         }
         if ($ordertimes != "") {
             $timeSql2= " AND bus_date.time <= '".$ordertimes."'";
-            //  輸入時間後面需要比較大
+           
         }
         
         $model =  $this->model("ListModel");

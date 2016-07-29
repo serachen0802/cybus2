@@ -1,9 +1,5 @@
-<?php foreach($data as $key => $value){
-?>
 <!DOCTYPE HTML>
-<?php
 
-?>
 <html>
 <head>
     <base href="/cybusEasy/public/" />
@@ -49,10 +45,10 @@
                     <div class="col-md-12">
                         <div class="block">
                             <div class="OrderContent">
-                                <div class="agreeTitle"><?php echo $value[0]['title'];?></div>
+                                <div class="agreeTitle"><?php echo $data['news']['title'];//$value[0]['title'];?></div>
                                 <div class="agreeContent">
-                                    <?php echo htmlspecialchars_decode($value[0]['news']);?>
-                               <?php } ?>
+                                    <?php echo htmlspecialchars_decode($data['news']['news']);?>
+                              
                             </div>
                         </div>
                     </div>
